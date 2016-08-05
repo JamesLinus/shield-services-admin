@@ -1,22 +1,27 @@
-import Collections from './components/collections.vue'
-import Onboarding from './components/onboarding.vue'
+// Views
+import CollectionsManage from './components/collections/CollectionsManage.vue'
+import OnboardingAdd from './components/onboarding/OnboardingAdd.vue'
+import OnboardingManage from './components/onboarding/OnboardingManage.vue'
 
 // Errors
 import NotFound from './components/errors/not-found.vue'
 
 export function configRouter (router) {
   router.map({
-    // Home page
-    '/collections': {
-      component: Collections
+    // Collections
+    '/collections/manage': {
+      component: CollectionsManage
     },
 
-    // About page
-    '/onboarding': {
-      component: Onboarding
+    // Onboarding
+    '/onboarding/manage': {
+      component: OnboardingManage
+    },
+    '/onboarding/add': {
+      component: OnboardingAdd
     },
 
-    // 404 Note Found handler
+    // Errors
     '*': {
       component: NotFound
     }
@@ -24,6 +29,8 @@ export function configRouter (router) {
 
   // Redirects
   router.redirect({
-    '/': '/collections'
+    '/': '/collections/manage',
+    '/collections': '/collections/manage',
+    '/onboarding': '/onboarding/manage'
   })
 }
