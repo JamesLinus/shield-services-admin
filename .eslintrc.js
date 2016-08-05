@@ -9,7 +9,6 @@ module.exports = {
     },
     sourceType: 'module'
   },
-  extends: 'airbnb-base',
   // required to lint *.vue files
   plugins: [
     'html'
@@ -17,6 +16,7 @@ module.exports = {
   // add your custom rules here
   'rules': {
     "accessor-pairs": 2,
+    "arrow-body-style": ["error", "as-needed"],
     "arrow-spacing": [2, { "before": true, "after": true }],
     "block-spacing": [2, "always"],
     "brace-style": [2, "1tbs", { "allowSingleLine": true }],
@@ -111,6 +111,7 @@ module.exports = {
     "no-useless-escape": 2,
     "no-whitespace-before-property": 2,
     "no-with": 2,
+    //"object-shorthand": ["error", "always"],
     "one-var": [2, { "initialized": "never" }],
     "operator-linebreak": [2, "after", { "overrides": { "?": "before", ":": "before" } }],
     "padded-blocks": [2, "never"],
